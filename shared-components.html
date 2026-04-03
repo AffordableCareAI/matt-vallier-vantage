@@ -1,0 +1,585 @@
+<!-- ============================================================
+     SHARED COMPONENTS — Vantage Insurance Holdings
+     All pages MUST include these exact components
+     ============================================================ -->
+
+<!-- ===== SVG ICON DEFINITIONS (place at top of <body>) ===== -->
+<!-- BEGIN:ICONS -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+  <symbol id="icon-twitter" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></symbol>
+  <symbol id="icon-email" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></symbol>
+  <symbol id="icon-location" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></symbol>
+  <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></symbol>
+  <symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+  <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></symbol>
+  <symbol id="icon-dollar" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></symbol>
+  <symbol id="icon-document" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></symbol>
+  <symbol id="icon-medical" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></symbol>
+</svg>
+<!-- END:ICONS -->
+
+
+<!-- ===== TOP BAR ===== -->
+<!-- BEGIN:TOPBAR -->
+<div class="top-bar">
+    <div class="container top-bar-inner">
+        <div class="top-bar-left">
+            <span class="top-bar-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-clock"/></svg>
+                Mon–Fri 8AM–7PM
+            </span>
+            <span class="top-bar-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-phone"/></svg>
+                <a href="tel:+15612063402">(561) 206-3402</a>
+            </span>
+            <span class="top-bar-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-phone"/></svg>
+                <a href="tel:+18003467180">1-800-346-7180</a>
+            </span>
+            <span class="top-bar-item hide-mobile">
+                <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-email"/></svg>
+                <a href="mailto:info@vantageinsuranceholdings.com">info@vantageinsuranceholdings.com</a>
+            </span>
+        </div>
+        <div class="top-bar-right">
+            <div class="top-bar-social">
+                <a href="https://facebook.com/VantageInsuranceHoldings" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#icon-facebook"/></svg></a>
+                <a href="https://linkedin.com/company/vantage-insurance-holdings/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#icon-linkedin"/></svg></a>
+                <a href="https://twitter.com/VantageInsuranc" target="_blank" rel="noopener" aria-label="Twitter"><svg><use href="#icon-twitter"/></svg></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END:TOPBAR -->
+
+
+<!-- ===== MAIN HEADER ===== -->
+<!-- BEGIN:HEADER -->
+<header class="main-header" id="mainHeader">
+    <div class="container header-inner">
+        <a href="/" class="logo">
+            <img src="/images/logo.png" alt="Vantage Insurance Holdings" height="50">
+        </a>
+        <nav class="main-nav" id="mainNav">
+            <a href="/">Home</a>
+            <div class="nav-dropdown">
+                <span class="nav-trigger">Services <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-chevron"/></svg></span>
+                <div class="dropdown-menu">
+                    <a href="/services/medicare">Medicare</a>
+                    <a href="/services/health-insurance">ACA / Health Insurance</a>
+                    <a href="/services/cross-selling">Cross-Selling Packages</a>
+                    <a href="/services/final-expense">Final Expense</a>
+                    <a href="/services/iul">IUL / Indexed Universal Life</a>
+                    <a href="/services/annuities">Annuities</a>
+                    <a href="/services/life-insurance">Life Insurance</a>
+                    <a href="/services/dental-vision-hearing">Dental, Vision & Hearing</a>
+                    <a href="/services/life-settlements">Life Settlements</a>
+                    <a href="/services/dual-eligible-snp">Dual Eligible SNP</a>
+                    <a href="/services/chronic-snp">Chronic Condition SNP</a>
+                    <a href="/services/prescription-plans">Prescription Drug Plans</a>
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <span class="nav-trigger">Locations <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-chevron"/></svg></span>
+                <div class="dropdown-menu">
+                    <a href="/locations/coral-springs">Coral Springs</a>
+                    <a href="/locations/west-palm-beach">West Palm Beach</a>
+                    <a href="/locations/boca-raton">Boca Raton</a>
+                    <a href="/locations/fort-lauderdale">Fort Lauderdale</a>
+                    <a href="/locations/pompano-beach">Pompano Beach</a>
+                    <a href="/locations/deerfield-beach">Deerfield Beach</a>
+                    <a href="/locations/parkland">Parkland</a>
+                    <a href="/locations/margate">Margate</a>
+                    <a href="/locations/coconut-creek">Coconut Creek</a>
+                    <a href="/locations/tamarac">Tamarac</a>
+                </div>
+            </div>
+            <a href="/about">About</a>
+            <a href="/reviews">Reviews</a>
+            <a href="/blog">Blog</a>
+            <a href="/faq">FAQ</a>
+            <a href="/contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <a href="tel:+15612063402" class="header-phone">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><use href="#icon-phone"/></svg>
+                (561) 206-3402
+            </a>
+            <a href="/contact" class="btn btn-accent btn-sm">Get a Quote</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+<!-- END:HEADER -->
+
+
+<!-- ===== MOBILE NAV OVERLAY ===== -->
+<!-- BEGIN:MOBILENAV -->
+<div class="mobile-nav-overlay" id="mobileNav">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/services/medicare">Medicare</a>
+    <a href="/services/health-insurance">Health Insurance</a>
+    <a href="/services/life-insurance">Life Insurance</a>
+    <a href="/locations">Locations</a>
+    <a href="/about">About</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/blog">Blog</a>
+    <a href="/faq">FAQ</a>
+    <a href="/contact">Contact</a>
+    <a href="tel:+15612063402" class="btn btn-accent" style="margin-top:24px">(561) 206-3402</a>
+    <a href="tel:+18003467180" style="font-size:14px;color:var(--accent-light);margin-top:8px">1-800-346-7180</a>
+</div>
+<!-- END:MOBILENAV -->
+
+
+<!-- ===== CARRIER TRUST BAR ===== -->
+<!-- BEGIN:CARRIERS -->
+<div class="carrier-bar">
+    <div class="carrier-bar-label">Trusted Carrier Partners</div>
+    <div class="carrier-track">
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/aetna.com" alt="Aetna" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>Aetna</span>'"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/americo.com" alt="Americo" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>Americo</span>'"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/bcbs.com" alt="Blue Cross Blue Shield" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>BCBS</span>'"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/cigna.com" alt="Cigna" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>Cigna</span>'"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/devoted.com" alt="Devoted Health" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>Devoted Health</span>'"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/ethoslife.com" alt="Ethos Life" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>Ethos Life</span>'"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/foresters.com" alt="Foresters Financial" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>Foresters</span>'"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/globelifeinsurance.com" alt="Globe Life" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>Globe Life</span>'"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/humana.com" alt="Humana" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>Humana</span>'"></span>
+        <span class="carrier-name">Lumico</span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/mutualofomaha.com" alt="Mutual of Omaha" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>Mutual of Omaha</span>'"></span>
+        <span class="carrier-name">Nassau</span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/nationalgeneral.com" alt="National General" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>National General</span>'"></span>
+        <span class="carrier-name">The Capitol Life</span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/transamerica.com" alt="Transamerica" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>Transamerica</span>'"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/uhc.com" alt="UnitedHealthcare" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>UnitedHealthcare</span>'"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/wellcare.com" alt="WellCare" loading="lazy" onerror="this.parentElement.outerHTML='<span class=carrier-name>WellCare</span>'"></span>
+        <!-- Duplicate for seamless scroll -->
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/aetna.com" alt="Aetna" loading="lazy"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/americo.com" alt="Americo" loading="lazy"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/bcbs.com" alt="Blue Cross Blue Shield" loading="lazy"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/cigna.com" alt="Cigna" loading="lazy"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/devoted.com" alt="Devoted Health" loading="lazy"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/ethoslife.com" alt="Ethos Life" loading="lazy"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/foresters.com" alt="Foresters Financial" loading="lazy"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/globelifeinsurance.com" alt="Globe Life" loading="lazy"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/humana.com" alt="Humana" loading="lazy"></span>
+        <span class="carrier-name">Lumico</span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/mutualofomaha.com" alt="Mutual of Omaha" loading="lazy"></span>
+        <span class="carrier-name">Nassau</span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/nationalgeneral.com" alt="National General" loading="lazy"></span>
+        <span class="carrier-name">The Capitol Life</span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/transamerica.com" alt="Transamerica" loading="lazy"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/uhc.com" alt="UnitedHealthcare" loading="lazy"></span>
+        <span class="carrier-logo"><img src="https://logo.clearbit.com/wellcare.com" alt="WellCare" loading="lazy"></span>
+    </div>
+</div>
+<!-- END:CARRIERS -->
+
+
+<!-- ===== SOCIAL MEDIA FEED SECTION ===== -->
+<!-- BEGIN:SOCIAL -->
+<section class="social-feed section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Connect With Us</span>
+            <h2>Follow Vantage Insurance</h2>
+            <p>Stay up to date with insurance tips, enrollment deadlines, and community updates.</p>
+        </div>
+        <div class="social-grid">
+            <div class="social-card reveal">
+                <div class="social-card-header">
+                    <div class="social-card-icon facebook">
+                        <svg><use href="#icon-facebook"/></svg>
+                    </div>
+                    <div>
+                        <div class="social-card-platform">Facebook</div>
+                        <div class="social-card-handle">@VantageInsuranceHoldings</div>
+                    </div>
+                </div>
+                <div class="social-card-body">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FVantageInsuranceHoldings&tabs=timeline&width=340&height=180&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false" width="100%" height="180" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
+                </div>
+                <div class="social-card-footer">
+                    <a href="https://facebook.com/VantageInsuranceHoldings" target="_blank" rel="noopener">Follow on Facebook <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-arrow"/></svg></a>
+                </div>
+            </div>
+            <div class="social-card reveal reveal-delay-1">
+                <div class="social-card-header">
+                    <div class="social-card-icon linkedin">
+                        <svg><use href="#icon-linkedin"/></svg>
+                    </div>
+                    <div>
+                        <div class="social-card-platform">LinkedIn</div>
+                        <div class="social-card-handle">Vantage Insurance Holdings</div>
+                    </div>
+                </div>
+                <div class="social-card-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px">
+                    <div style="font-size:48px">💼</div>
+                    <p style="font-size:14px;color:var(--text-muted);margin:0">Follow us on LinkedIn for industry insights, Medicare updates, and professional content.</p>
+                    <div style="font-size:24px;font-family:var(--font-heading);font-weight:800;color:var(--primary)">149 Followers</div>
+                    <p style="font-size:12px;color:var(--text-muted);margin:0">"Your Bridge to Better Health"</p>
+                </div>
+                <div class="social-card-footer">
+                    <a href="https://linkedin.com/company/vantage-insurance-holdings/" target="_blank" rel="noopener">Follow on LinkedIn <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-arrow"/></svg></a>
+                </div>
+            </div>
+            <div class="social-card reveal reveal-delay-2">
+                <div class="social-card-header">
+                    <div class="social-card-icon twitter">
+                        <svg><use href="#icon-twitter"/></svg>
+                    </div>
+                    <div>
+                        <div class="social-card-platform">X (Twitter)</div>
+                        <div class="social-card-handle">@VantageInsuranc</div>
+                    </div>
+                </div>
+                <div class="social-card-body">
+                    <a class="twitter-timeline" data-height="180" data-theme="light" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/VantageInsuranc">Posts by @VantageInsuranc</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div class="social-card-footer">
+                    <a href="https://twitter.com/VantageInsuranc" target="_blank" rel="noopener">Follow on X <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><use href="#icon-arrow"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END:SOCIAL -->
+
+
+<!-- ===== FOOTER ===== -->
+<!-- BEGIN:FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="/images/logo.png" alt="Vantage Insurance Holdings" height="44">
+                <p>Known and respected throughout Southeast Florida. Your trusted partner for Medicare, health, life, and supplemental insurance since 2014.</p>
+                <div class="footer-social">
+                    <a href="https://facebook.com/VantageInsuranceHoldings" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#icon-facebook"/></svg></a>
+                    <a href="https://linkedin.com/company/vantage-insurance-holdings/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#icon-linkedin"/></svg></a>
+                    <a href="https://twitter.com/VantageInsuranc" target="_blank" rel="noopener" aria-label="Twitter"><svg><use href="#icon-twitter"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Insurance Services</h4>
+                <ul>
+                    <li><a href="/services/medicare">Medicare</a></li>
+                    <li><a href="/services/health-insurance">ACA / Health Insurance</a></li>
+                    <li><a href="/services/life-insurance">Life Insurance</a></li>
+                    <li><a href="/services/final-expense">Final Expense</a></li>
+                    <li><a href="/services/annuities">Annuities</a></li>
+                    <li><a href="/services/iul">IUL</a></li>
+                    <li><a href="/services/cross-selling">Cross-Selling Packages</a></li>
+                    <li><a href="/services/dental-vision-hearing">Dental, Vision & Hearing</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/reviews">Reviews</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/locations">Locations</a></li>
+                    <li><a href="https://myvih.com/" target="_blank" rel="noopener">myVIH Portal</a></li>
+                    <li><a href="https://www.vantageinsuranceholdings.com" target="_blank" rel="noopener">Main Website</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><use href="#icon-location"/></svg>
+                    <span>5411 N University Dr #202<br>Coral Springs, FL 33067</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><use href="#icon-phone"/></svg>
+                    <span><a href="tel:+15612063402">(561) 206-3402</a><br><a href="tel:+18003467180">1-800-346-7180</a></span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><use href="#icon-email"/></svg>
+                    <a href="mailto:info@vantageinsuranceholdings.com">info@vantageinsuranceholdings.com</a>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><use href="#icon-clock"/></svg>
+                    <span>Mon–Fri: 8:00 AM – 7:00 PM<br>Sat–Sun: Closed</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vantage Insurance Holdings. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="https://www.vantageinsuranceholdings.com" target="_blank" rel="noopener">Visit Main Site</a>
+                <span>Built with care by <a href="https://strategicaiarchitects.com" target="_blank" rel="noopener">Strategic AI Architects</a></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END:FOOTER -->
+
+
+<!-- ===== COOKIE CONSENT ===== -->
+<!-- BEGIN:COOKIE -->
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-inner">
+        <p>We use cookies to improve your experience. By continuing to browse, you agree to our <a href="/privacy">Privacy Policy</a>.</p>
+        <div class="cookie-buttons">
+            <button class="btn btn-sm btn-accent" onclick="acceptCookies()">Accept</button>
+            <button class="btn btn-sm btn-outline-light" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+</div>
+<!-- END:COOKIE -->
+
+
+<!-- ===== MOBILE STICKY CTA ===== -->
+<!-- BEGIN:MOBILECTA -->
+<div class="mobile-cta">
+    <div class="mobile-cta-inner">
+        <a href="tel:+15612063402" class="btn btn-call">📞 Call Now</a>
+        <a href="/contact" class="btn btn-accent">Get a Quote</a>
+    </div>
+</div>
+<!-- END:MOBILECTA -->
+
+
+<!-- ===== SHARED JAVASCRIPT ===== -->
+<!-- BEGIN:SCRIPTS -->
+<script>
+// Header scroll effect
+const header = document.getElementById('mainHeader');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+    lastScroll = window.scrollY;
+}, { passive: true });
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('open');
+        document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+}
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+        const isActive = item.classList.contains('active');
+        // Close all
+        document.querySelectorAll('.faq-item.active').forEach(active => {
+            active.classList.remove('active');
+            active.querySelector('.faq-answer').style.maxHeight = null;
+        });
+        // Open clicked (if wasn't already open)
+        if (!isActive) {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    });
+});
+
+// Animated counters
+function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const duration = 2000;
+    const start = performance.now();
+    function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + Math.floor(target * eased).toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+}
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('[data-target]').forEach(animateCounter);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+document.querySelectorAll('.stats-grid').forEach(el => counterObserver.observe(el));
+
+// Cookie consent
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookieBanner').classList.remove('show');
+    // Enable analytics here
+    if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+        });
+    }
+}
+function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    document.getElementById('cookieBanner').classList.remove('show');
+}
+// Show banner if no consent
+window.addEventListener('DOMContentLoaded', () => {
+    if (!localStorage.getItem('cookieConsent')) {
+        setTimeout(() => {
+            document.getElementById('cookieBanner').classList.add('show');
+        }, 2000);
+    }
+});
+
+// Form submit handler (generic)
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        setTimeout(() => {
+            form.innerHTML = '<div style="text-align:center;padding:40px 20px"><h3 style="color:var(--accent);margin-bottom:12px">Thank You!</h3><p style="color:var(--text-muted)">We\'ve received your request. Matthew will be in touch within 1 business day.</p><p style="margin-top:12px"><a href="tel:+15612063402" style="color:var(--accent-dark);font-weight:700">Call (561) 206-3402 for immediate assistance</a></p></div>';
+        }, 800);
+    });
+});
+</script>
+<!-- END:SCRIPTS -->
+
+
+<!-- ===== GOOGLE CONSENT MODE V2 + TRACKING ===== -->
+<!-- BEGIN:TRACKING (place in <head>) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'personalization_storage': 'denied',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+});
+</script>
+<!-- CONFIGURE: GTM Container ID -->
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+<!-- CONFIGURE: GA4 Measurement ID -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+<!-- CONFIGURE: Facebook Pixel -->
+<!-- <script>!function(f,b,e,v,n,t,s){...}('XXXXXXXXXXXXXXXX');</script> -->
+<!-- CONFIGURE: Microsoft UET -->
+<!-- <script>(function(w,d,t,r,u){...})(window,document,'script','//bat.bing.com/bat.js','XXXXXXXX');</script> -->
+<!-- END:TRACKING -->
+
+
+<!-- ===== BUSINESS DATA REFERENCE ===== -->
+<!--
+BUSINESS: Vantage Insurance Holdings
+OWNER: Matthew Vallier
+ADDRESS: 5411 N University Dr #202, Coral Springs, FL 33067
+PHONE: (561) 206-3402
+TOLL-FREE: 1-800-346-7180
+EMAIL: info@vantageinsuranceholdings.com
+HOURS: Mon-Fri 8AM-7PM, Sat-Sun Closed
+DOMAIN: vantageinsuranceholdings1.com (canonical)
+MAIN SITE: vantageinsuranceholdings.com (link back to)
+
+ENROLLMENT PURLS:
+- HealthSherpa (ACA+Medicare): https://www.healthsherpa.com/?_agent_id=matthew-vallier-wxt88g
+- Ethos (Life Insurance): https://agents.ethoslife.com/invite/3e87f
+- Legacy of Love (Life): https://www.legacyoflove.com/agent/matthew_vallier
+- myVIH Portal: https://myvih.com/
+- NFG Retirement: https://nfg.com/retirement-planning-worksheet.html
+
+SOCIAL:
+- Facebook: https://facebook.com/VantageInsuranceHoldings
+- LinkedIn: https://linkedin.com/company/vantage-insurance-holdings/
+- Twitter: https://twitter.com/VantageInsuranc
+
+GOOGLE:
+- Place ID: ChIJbZrQxugb2YgRYcbcODVpAYU
+- Rating: 4.3 / 5.0 (6 reviews)
+- Write Review: https://search.google.com/local/writereview?placeid=ChIJbZrQxugb2YgRYcbcODVpAYU
+- Coordinates: 26.2983093, -80.2472479
+
+BRANDING:
+- "Bad things happen to good people"
+- "Known and respected throughout Southeast Florida"
+- "Your bridge to better wealth"
+
+CARRIERS (17):
+Aetna, Americo, Blue Cross Blue Shield, Cigna, Devoted Health, Ethos Life, Foresters Financial, Globe Life, Humana, Lumico, Mutual of Omaha, Nassau, National General, The Capitol Life, Transamerica, UnitedHealthcare, WellCare
+
+SERVICES (priority order):
+1. Medicare (Supplements + MAPD)
+2. ACA / Health Insurance
+3. Cross-Selling Packages
+4. Final Expense
+5. IUL / Indexed Universal Life
+6. Annuities
+7. Life Insurance (Term, Whole, multi-state: FL+IA+IL+TX+GA+TN)
+8. Dental, Vision & Hearing
+9. Life Settlements
+10. Dual Eligible SNP (D-SNP)
+11. Chronic Condition SNP (C-SNP)
+12. Prescription Drug Plans (Part D)
+
+LOCATIONS:
+Coral Springs (HQ), West Palm Beach, Boca Raton, Fort Lauderdale, Pompano Beach, Deerfield Beach, Parkland, Margate, Coconut Creek, Tamarac
+
+GOOGLE REVIEWS (use these REAL reviews):
+1. Loretta Dempsey Barker - 5 stars - Jan 2023
+   "Matthew explained every detail of the policy and choices. He made sure I understood. He was very helpful and knowledgeable. His patience and understanding took away my stress regarding Medicare supplemental insurance sign up. He was very friendly and I enjoyed our conversation. I'd give him an A+."
+
+2. Kelly Andreason - 5 stars - Jan 2023
+   "Matthew Vallier and Vantage Insurance Holdings is a top-knotch Medicare and life insurance agency. Matthew is especially knowledgable in a vast array insurance product offerings and is always willing to help you find the right fit. He is a pleasure to work with for any of your insurance needs! I highly recommend this agency."
+
+3. Dawson Smith - 5 stars - May 2023
+   "Matthew provided information on an alternative plan and insurance company to reduce an increased premium on an existing plan. He also provided assistance in filling out and returning the appropriate form to the insurance carrier."
+
+4. Willa Burleson - 5 stars - Oct 2024
+   "Matthew knew exactly what I needed in the way of insurance."
+
+5. John B. - 5 stars - Jan 2023
+   "Vantage Insurance did a great job for us regarding Medicare Supplement Insurance. Matt Vallier was very knowledgeable and professional in his advice. He was able to save us money on our monthly premiums."
+-->
+

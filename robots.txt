@@ -1,0 +1,8 @@
+# robots.txt — Vantage Insurance Holdings
+# https://www.vantageinsuranceholdings.com
+
+User-agent: *
+Allow: /
+Disallow: /images/
+
+Sitemap: https://www.vantageinsuranceholdings.com/sitemap.xml

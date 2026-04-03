@@ -1,0 +1,130 @@
+{
+  "company": {
+    "name": "Vantage Insurance Holdings",
+    "domain": "vantageinsuranceholdings.com",
+    "shortDomain": "myvih.com",
+    "platform": "Wix",
+    "logoUrl": "https://static.wixstatic.com/media/17276b_e41a998612944c178f894484075a4f38~mv2.png/v1/crop/x_0,y_0,w_2533,h_847/fill/w_437,h_140,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo_vantage-01_edited.png"
+  },
+
+  "contact": {
+    "phone": "+1 (773) 812-2077",
+    "tollFree": "(800) 346-7180",
+    "email": "info@vantageinsuranceholdings.com",
+    "address": {
+      "street": "300 Colonial Rd",
+      "city": "West Palm Beach",
+      "state": "FL",
+      "zip": "33405",
+      "country": "US"
+    },
+    "coordinates": {
+      "latitude": 26.659214,
+      "longitude": -80.052063
+    }
+  },
+
+  "socialMedia": {
+    "facebook": "https://www.facebook.com/VantageInsuranceHoldings",
+    "linkedin": "https://www.linkedin.com/company/vantage-insurance-holdings/",
+    "twitter": "https://twitter.com/VantageInsuranc",
+    "instagram": null,
+    "youtube": null,
+    "tiktok": null
+  },
+
+  "taglines": [
+    "Life Insurance | Vantage Insurance Holdings | West Palm Beach",
+    "Vantage Insurance Holdings, Life Insurance in West Palm Beach, FL."
+  ],
+
+  "carriers": [
+    "Aetna",
+    "Americo",
+    "Cigna",
+    "Ethos Life Insurance",
+    "Humana",
+    "Lumico",
+    "Nassau",
+    "The Capitol Life",
+    "UnitedHealthcare"
+  ],
+
+  "carrierNotes": {
+    "ethosLifeAgentLink": "https://agents.ethoslife.com/invite/3e87f",
+    "legacyOfLoveAgentLink": "https://www.legacyoflove.com/agent/matthew_vallier",
+    "nfgRetirementLink": "https://nfg.com/retirement-planning-worksheet.html"
+  },
+
+  "services": {
+    "seniorHealthcare": {
+      "medicareAdvantage": true,
+      "medicareSupplement": true,
+      "prescriptionDrugPlans": true,
+      "chronicSNP": true,
+      "dualEligibleSNP": true,
+      "medigap": true
+    },
+    "dentalVisionHearing": {
+      "dentalPlans": true,
+      "visionPlans": true,
+      "hearingPlans": true
+    },
+    "lifeInsurance": {
+      "finalExpense": true,
+      "wholeLife": true,
+      "termLife": true,
+      "generalLifeInsurance": true
+    },
+    "healthInsurance": {
+      "individualMedicalPlans": true,
+      "groupMedicalPlans": true
+    }
+  },
+
+  "servicesPageTitles": [
+    "Senior Healthcare",
+    "Medicare Advantage",
+    "Medicare Supplement / Medigap",
+    "Prescription Plans (Part D)",
+    "Chronic SNP",
+    "Dual Eligible SNP",
+    "Dental Plans",
+    "Vision Plans",
+    "Hearing Plans",
+    "Dental, Vision and Hearing Plans",
+    "Life Insurance",
+    "Final Expense",
+    "Medical Plans (Individual)",
+    "Medical Plans (Group)"
+  ],
+
+  "carriersByCategory": {
+    "individual": "Carriers (Individual) page exists",
+    "group": "Carriers (Group) page exists",
+    "finalExpense": "Carriers (Final Expense) page exists",
+    "vision": "Carriers (Vision) page exists",
+    "hearing": "Carriers (Hearing) page exists",
+    "prescription": "Carriers (Prescription) page exists"
+  },
+
+  "teamMembers": {
+    "owner": "Matthew Vallier",
+    "notes": "Name found via Ethos agent link (matthew_vallier) and Legacy of Love agent link. No visible bio text extractable from Wix client-side rendering."
+  },
+
+  "siteFeatures": {
+    "bookingCalendar": true,
+    "shop": true,
+    "blog": true,
+    "memberArea": true,
+    "healthInsuranceNeedsForm": true,
+    "resources": true
+  },
+
+  "seoData": {
+    "title": "Life Insurance | Vantage Insurance Holdings | West Palm Beach",
+    "description": "Vantage Insurance Holdings, Life Insurance in West Palm Beach, FL.",
+    "ogImage": "https://static.wixstatic.com/media/17276b_6e445eaead5443c3ba0901b2e58fa4b3~mv2.png"
+  }
+}
